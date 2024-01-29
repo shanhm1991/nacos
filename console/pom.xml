@@ -94,10 +94,6 @@
             <version>9.0.63</version>
         </dependency>
 
-
-
-
-
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-default-plugin-all</artifactId>
