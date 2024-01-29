@@ -17,11 +17,13 @@
 package com.alibaba.nacos;
 
 import com.alibaba.nacos.sys.filter.NacosTypeExcludeFilter;
+import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.AutoConfigurationExcludeFilter;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.TypeExcludeFilter;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.FilterType;
@@ -41,9 +43,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
         @Filter(type = FilterType.CUSTOM, classes = {TypeExcludeFilter.class}),
         @Filter(type = FilterType.CUSTOM, classes = {AutoConfigurationExcludeFilter.class})})
 @ServletComponentScan
+@EnableAdminServer
+@EnableDiscoveryClient
 @EnableScheduling
 public class Nacos {
-    
+
     public static void main(String[] args) {
         SpringApplication.run(Nacos.class, args);
     }
