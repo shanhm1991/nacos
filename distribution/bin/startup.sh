@@ -52,15 +52,15 @@ if [ -z "$JAVA_HOME" ]; then
 fi
 
 export SERVER="nacos-server"
-export MODE="cluster"
+#export MODE="cluster"
 export FUNCTION_MODE="all"
 export MEMBER_LIST=""
 export EMBEDDED_STORAGE=""
 while getopts ":m:f:s:c:p:" opt
 do
     case $opt in
-        m)
-            MODE=$OPTARG;;
+#        m)
+#            MODE=$OPTARG;;
         f)
             FUNCTION_MODE=$OPTARG;;
         s)
