@@ -83,8 +83,6 @@ export CUSTOM_SEARCH_LOCATIONS=file:${BASE_DIR}/conf/
 #===========================================================================================
 # JVM Configuration
 #===========================================================================================
-MODE="standalone"
-
 if [[ "${MODE}" == "standalone" ]]; then
     JAVA_OPT="${JAVA_OPT} -Xms512m -Xmx512m -Xmn256m"
     JAVA_OPT="${JAVA_OPT} -Dnacos.standalone=true"
