@@ -93,6 +93,12 @@
             <artifactId>tomcat-embed-websocket</artifactId>
             <version>9.0.63</version>
         </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-resolver-dns-native-macos</artifactId>
+            <version>4.1.90.Final</version>
+            <classifier>osx-aarch_64</classifier>
+        </dependency>
 
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
