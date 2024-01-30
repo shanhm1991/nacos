@@ -83,6 +83,8 @@ export CUSTOM_SEARCH_LOCATIONS=file:${BASE_DIR}/conf/
 #===========================================================================================
 # JVM Configuration
 #===========================================================================================
+MODE="standalone"
+
 if [[ "${MODE}" == "standalone" ]]; then
     JAVA_OPT="${JAVA_OPT} -Xms512m -Xmx512m -Xmn256m"
     JAVA_OPT="${JAVA_OPT} -Dnacos.standalone=true"
@@ -141,9 +143,8 @@ fi
 echo "$JAVA $JAVA_OPT_EXT_FIX ${JAVA_OPT}" > ${BASE_DIR}/logs/start.out 2>&1 &
 
 if [[ "$JAVA_OPT_EXT_FIX" == "" ]]; then
-  nohup "$JAVA" ${JAVA_OPT} nacos.nacos >> ${BASE_DIR}/logs/start.out 2>&1 &
+  "$JAVA" ${JAVA_OPT} nacos.nacos
 else
-  nohup "$JAVA" "$JAVA_OPT_EXT_FIX" ${JAVA_OPT} nacos.nacos >> ${BASE_DIR}/logs/start.out 2>&1 &
+  "$JAVA" "$JAVA_OPT_EXT_FIX" ${JAVA_OPT} nacos.nacos
 fi
 
-echo "nacos is starting. you can check the ${BASE_DIR}/logs/start.out"
